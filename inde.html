@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorador de Carros</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Explorador de Carros</h1>
+    </div>
+    <div class="toolbar">
+        <button class="tool-button" onclick="showDetails('car1')" accesskey="c">Carro Clássico (Alt + C)</button>
+        <button class="tool-button" onclick="showDetails('car2')" accesskey="m">Carro Moderno (Alt + M)</button>
+        <button class="tool-button" onclick="showDetails('car3')" accesskey="e">Carro Elétrico (Alt + E)</button>
+    </div>
+    <div id="details" class="details">
+        <p>Selecione uma categoria de carro para ver mais detalhes.</p>
+    </div>
+
+    <script>
+        function showDetails(carType) {
+            const detailsDiv = document.getElementById('details');
+            let content = '';
+
+            if (carType === 'car1') {
+                content = `
+                    <h2>Carro Clássico</h2>
+                    <img src="cLASSICO.jpg" alt="Carro Clássico" style="width:300px;">
+                    <p>carros clássicos são veículos que representam uma era específica da história automotiva e são geralmente admirados por seu design, engenharia e nostalgia...</p>
+                `;
+            } else if (carType === 'car2') {
+                content = `
+                    <h2>Carro Moderno</h2>
+                    <img src="moderno.avif" alt="Carro Moderno" style="width:300px;">
+                    <p>o melhor caroo moderno da época chegando a 590 km por hora...</p>
+                `;
+            } else if (carType === 'car3') {
+                content = `
+                    <h2>Carro Elétrico</h2>
+                    <img src="eletrico.jpg" alt="Carro Elétrico" style="width:300px;">
+                    <p>carros elétricos (EVs, do inglês Electric Vehicles) são veículos que utilizam um ou mais motores elétricos para propulsão, em vez de motores de combustão interna....</p>
+                `;
+            }
+
+            detailsDiv.innerHTML = content;
+        }
+    </script>
+</body>
+</html>
